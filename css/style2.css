@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Styles for the doctor grid using Flexbox */
+.doctors-grid {
+  margin-top: 35px; /* Atur jarak sesuai kebutuhan Anda */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.doctor {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  width: calc(25% - 20px); /* Lebar kotak dokter, dikurangi jarak antar kotak */
+  box-sizing: border-box; /* Memastikan padding tidak memengaruhi lebar kotak */
+  display: flex;
+  flex-direction: column; /* Tampilkan konten dalam kolom */
+  align-items: center; /* Pusatkan konten dalam kotak dokter */
+  outline: 0.1rem solid #ccc;
+  outline-offset: -0.8rem;
+  cursor: pointer;
+}
+
+.doctor:hover {
+  outline: 0.2rem solid #16c5ff;
+  outline-offset: 0;
+}
+
+.doctor img {
+  width: 100px; /* Atur lebar gambar sesuai kebutuhan Anda */
+  height: 100px; /* Atur tinggi gambar sesuai kebutuhan Anda */
+  border-radius: 50%; /* Untuk membuat gambar menjadi lingkaran */
+  margin-bottom: 10px;
+}
+.doctor-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.doctor-preview .preview {
+  display: none;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  margin: 2rem;
+  width: 40rem;
+}
+
+.doctor-preview .preview.active {
+  display: inline-block;
+}
+
+.doctor-preview .preview img {
+  height: 30rem;
+}
+
+.doctor-preview .preview .fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  color: #444;
+  font-size: 3rem;
+}
+
+.doctor-preview .preview .fa-times:hover {
+  transform: rotate(90deg);
+}
+
+.doctor-preview .preview h3 {
+  color: #444;
+  padding: 0.5rem 0;
+  font-size: 2.5rem;
+}
+
+.doctor-preview .preview p {
+  line-height: 1.5;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  color: #777;
+}
+
+.doctor-preview .preview .job {
+  padding: 1rem 0;
+  font-size: 2.5rem;
+  color: #27ae60;
+}
+
+.doctor-preview .preview .buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.doctor-preview .preview .buttons a {
+  flex: 1 1 16rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: #444;
+  border: 0.1rem solid #444;
+}
+
+.doctor h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.doctor p {
+  font-size: 14px;
+  color: #888;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-preview .preview img {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
